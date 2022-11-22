@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="textColorTheme" format="color"/>
+    <attr name="hintColorTheme" format="color"/>
+    <attr name="backgroundPrimaryColorTheme" format="color"/>
+    <attr name="backgroundSecondaryColorTheme" format="color"/>
+    <attr name="backgroundTeriaryColorTheme" format="color"/>
+    <attr name="dialogBackgroundColor" format="color"/>
+    <attr name="buttonColorTheme" format="color"/>
+    <attr name="customBackgroundSrcBackButton" format="reference|color"/>
+    <attr name="customBackgroundSrcCloseButton" format="reference|color"/>
+    <attr name="customBackgroundSrcRefreshButton" format="reference|color"/>
+    <attr name="customBackgroundRecyclerViewSrc" format="reference|color"/>
+    <attr name="customBackgroundColorEditText" format="color"/>
+
+</resources>

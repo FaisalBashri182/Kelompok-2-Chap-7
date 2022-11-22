@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Ch6Group" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="textColorTheme">@color/white</item>
+        <item name="backgroundPrimaryColorTheme">@color/dark_grey</item>
+        <item name="backgroundSecondaryColorTheme">@color/dark_blue</item>
+        <item name="backgroundTeriaryColorTheme">@color/light_grey</item>
+        <item name="customBackgroundSrcBackButton">@drawable/dark_theme_back_arrow</item>
+        <item name="customBackgroundRecyclerViewSrc">@drawable/bg_rounded_rv_dark</item>
+        <item name="customBackgroundSrcCloseButton">@drawable/dark_theme_close</item>
+        <item name="customBackgroundSrcRefreshButton">@drawable/dark_theme_refresh</item>
+        <item name="dialogBackgroundColor">@color/black</item>
+        <item name="customBackgroundColorEditText">@color/black</item>
+        <item name="hintColorTheme">#32FFFFFF</item>
+        <item name="buttonColorTheme">@color/purple_700</item>
+
+    </style>
+</resources>
