@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Layout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.intro.LandingPage2">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo_landing_page_2"
+        android:paddingHorizontal="64dp"
+        android:src="@drawable/landing_page2" />
+
+    <TextView
+        style="@style/tvLandingPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bermain_suit_melawan_komputer" />
+
+
+</LinearLayout>

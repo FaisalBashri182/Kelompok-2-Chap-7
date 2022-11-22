@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?attr/dialogBackgroundColor"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hasil_permainan"
+        android:textColor="?attr/textColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        android:textSize="24sp"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="48sp"
+        android:textColor="?attr/textColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        />
+
+    <Button
+        android:id="@+id/btnMainLagi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_lagi"
+        android:fontFamily="@font/comicneue_bold"
+        android:textColor="?attr/textColorTheme"
+        android:backgroundTint="?attr/backgroundSecondaryColorTheme" />
+
+    <Button
+        android:id="@+id/btnBackToMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kembali_ke_menu"
+        android:fontFamily="@font/comicneue_bold"
+        android:textColor="?attr/textColorTheme"
+        android:backgroundTint="?attr/backgroundSecondaryColorTheme"/>
+
+</LinearLayout>
+
