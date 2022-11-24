@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="name"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textColorHint="?attr/hintColorTheme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="result"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textColorHint="?attr/hintColorTheme"
         app:layout_constraintStart_toEndOf="@id/tv_name_item_rv_history"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="date"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textColorHint="?attr/hintColorTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

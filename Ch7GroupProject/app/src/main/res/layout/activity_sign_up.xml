@@ -17,7 +17,7 @@
         android:gravity="center"
         android:text="Sign Up"
         android:textAlignment="gravity"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         android:id="@+id/tv_title_activity_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
         android:text="Choose avatar"
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="32dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ll_Avatar"/>
 
@@ -107,7 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:background="?attr/customBackgroundColorEditText"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:inputType="text"
         android:paddingHorizontal="8dp"
         android:layout_marginHorizontal="32dp"
@@ -123,7 +123,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_user_name_activity_sign_up"/>
 
@@ -135,7 +135,7 @@
         android:background="?attr/customBackgroundColorEditText"
         android:inputType="textEmailAddress"
         android:paddingHorizontal="8dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email_activity_sign_up"
         android:autofillHints=""
@@ -148,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="32dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_email_activity_sign_up"/>
 
@@ -157,7 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:paddingHorizontal="8dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:autofillHints=""
         android:inputType="textPassword"
         android:background="?attr/customBackgroundColorEditText"
@@ -173,7 +173,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="32dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_enter_password_activity_sign_up"/>
 
@@ -198,9 +198,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:layout_marginHorizontal="32dp"
-        android:backgroundTint="?attr/backgroundSecondaryColorTheme"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:layout_gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

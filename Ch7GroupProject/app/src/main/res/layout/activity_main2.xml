@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/btnClose"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:src="?attr/customBackgroundSrcCloseButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,7 +67,7 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/r"
-        android:src="@drawable/batu"
+        android:src="?attr/customSrcBatu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -76,7 +76,7 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/p"
-        android:src="@drawable/kertas"
+        android:src="?attr/customSrcKertas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivBatuP" />
 
@@ -85,7 +85,7 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/s"
-        android:src="@drawable/gunting"
+        android:src="?attr/customSrcGunting"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivKertasP" />
 
@@ -108,7 +108,8 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/r"
-        android:src="@drawable/batu"
+        android:src="?attr/customSrcBatu"
+        android:rotationY="180"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPemain2" />
 
@@ -117,7 +118,8 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/p"
-        android:src="@drawable/kertas"
+        android:src="?attr/customSrcKertas"
+        android:rotationY="180"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivBatuP2" />
 
@@ -126,7 +128,8 @@
         style="@style/img"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/s"
-        android:src="@drawable/gunting"
+        android:src="?attr/customSrcGunting"
+        android:rotationY="180"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivKertasP2" />
 
@@ -146,13 +149,14 @@
         app:layout_constraintTop_toBottomOf="@+id/ivBatuP" />
 
     <ImageView
-        android:contentDescription="@string/refresh"
         android:id="@+id/ivRefresh"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/refresh"
         android:src="?attr/customBackgroundSrcRefreshButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

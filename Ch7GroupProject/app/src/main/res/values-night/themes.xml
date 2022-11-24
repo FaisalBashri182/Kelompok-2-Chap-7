@@ -12,18 +12,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="textColorTheme">@color/white</item>
+        <item name="textColorTheme1">@color/white</item>
         <item name="backgroundPrimaryColorTheme">@color/dark_grey</item>
-        <item name="backgroundSecondaryColorTheme">@color/dark_blue</item>
+        <item name="backgroundSecondaryColorTheme">#8F25A1</item>
         <item name="backgroundTeriaryColorTheme">@color/light_grey</item>
-        <item name="customBackgroundSrcBackButton">@drawable/dark_theme_back_arrow</item>
+        <item name="customBackgroundSrcBackButton">@drawable/back_night</item>
         <item name="customBackgroundRecyclerViewSrc">@drawable/bg_rounded_rv_dark</item>
-        <item name="customBackgroundSrcCloseButton">@drawable/dark_theme_close</item>
-        <item name="customBackgroundSrcRefreshButton">@drawable/dark_theme_refresh</item>
+        <item name="customBackgroundSrcCloseButton">@drawable/home_night</item>
+        <item name="customBackgroundSrcRefreshButton">@drawable/refresh_night</item>
         <item name="dialogBackgroundColor">@color/black</item>
-        <item name="customBackgroundColorEditText">@color/black</item>
+        <item name="customBackgroundColorEditText">#232323</item>
         <item name="hintColorTheme">#32FFFFFF</item>
-        <item name="buttonColorTheme">@color/purple_700</item>
+        <item name="buttonColorTheme1">#6D0080</item>
+        <item name="customSrcBatu">@drawable/rock_night</item>
+        <item name="customSrcKertas">@drawable/paper_night</item>
+        <item name="customSrcGunting">@drawable/scissors_night</item>
+        <item name="customSrcPlayerPlayer">@drawable/player_player_night</item>
+        <item name="customSrcPlayerCPU">@drawable/player_cpu_night</item>
+        <item name="textColorTheme2">#9C27B0</item>
 
     </style>
 </resources>

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:fontFamily="@font/comicneue_regular"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textAlignment="center"
         android:text="@string/about_content"/>
 

@@ -15,14 +15,14 @@
 
         <TextView
             android:id="@+id/tvMode"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
             android:background="?attr/backgroundSecondaryColorTheme"
             android:fontFamily="@font/comicneue_bold"
             android:gravity="center"
             android:text="Mode"
             android:textAlignment="gravity"
-            android:textColor="?attr/textColorTheme"
+            android:textColor="?attr/textColorTheme1"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,27 +44,29 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     
     <TextView
+        android:fontFamily="@font/comicneue_bold"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pilih_lawanmu"
         android:layout_marginTop="64dp"
         android:textSize="28sp"
-        android:textColor="?attr/textColorTheme"/>
+        android:textColor="?attr/textColorTheme1"/>
 
     <ImageView
         android:contentDescription="@string/player_vs_player"
         android:id="@+id/ivPlayerVsPlayer2"
-        android:layout_width="wrap_content"
-        android:layout_height="138dp"
-        android:layout_marginTop="64dp"
-        android:src="@drawable/landing_page1"/>
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:layout_marginTop="16dp"
+        android:src="?attr/customSrcPlayerPlayer"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
         <TextView
+            android:fontFamily="@font/comicneue_bold"
             android:id="@+id/tvNamaPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,29 +74,30 @@
             android:text=""
             android:layout_weight="1"
             android:textSize="22sp"
-            android:textColor="?attr/textColorTheme"/>
+            android:textColor="?attr/textColorTheme1"/>
         <TextView
+            android:fontFamily="@font/comicneue_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_weight="1"
             android:text=" vs Player"
             android:textSize="22sp"
-            android:textColor="?attr/textColorTheme"/>
+            android:textColor="?attr/textColorTheme1"/>
     </LinearLayout>
 
     <ImageView
         android:contentDescription="@string/player_vs_cpu"
         android:id="@+id/ivPlayerVsCPU"
         android:layout_width="wrap_content"
-        android:layout_height="138dp"
+        android:layout_height="164dp"
         android:layout_marginTop="48dp"
-        android:src="@drawable/landing_page2"/>
+        android:src="?attr/customSrcPlayerCPU"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
         <TextView
+            android:fontFamily="@font/comicneue_bold"
             android:id="@+id/tvNamaPlayerInCPUMode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,15 +105,16 @@
             android:layout_weight="1"
             android:text=""
             android:textSize="22sp"
-            android:textColor="?attr/textColorTheme"/>
+            android:textColor="?attr/textColorTheme1"/>
         <TextView
+            android:fontFamily="@font/comicneue_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=" vs CPU"
 
             android:textSize="22sp"
-            android:textColor="?attr/textColorTheme"/>
+            android:textColor="?attr/textColorTheme1"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="History"
         android:textAlignment="gravity"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -24,7 +24,7 @@
         android:id="@+id/button_get_started"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/buttonColorTheme"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:text="GET STARTED"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

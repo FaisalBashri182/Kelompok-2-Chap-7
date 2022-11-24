@@ -7,11 +7,23 @@
     android:backgroundTint="?attr/backgroundPrimaryColorTheme"
     tools:context=".ui.home.HomeActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/backgroundSecondaryColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        android:gravity="center"
+        android:text="Home"
+        android:textAlignment="gravity"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="30sp"
+        tools:ignore="HardcodedText" />
+
     <ImageView
         android:id="@+id/iv_avatar_activity_sign_up"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="64dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/landing_page3"
         tools:src="@tools:sample/avatars" />
@@ -21,35 +33,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="?attr/textColorTheme"
+        android:textColor="?attr/textColorTheme1"
         android:layout_gravity="center_horizontal"
         android:text="Username" />
 
     <Button
         android:id="@+id/btn_profile_activity_sign_up"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/buttonColorTheme"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/comicneue_bold"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:layout_marginTop="24dp"
         android:layout_gravity="center_horizontal"
         android:text="Profile" />
 
     <Button
         android:id="@+id/btn_play_game_activity_home"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/buttonColorTheme"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/comicneue_bold"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
+        android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal"
         android:text="Play Game" />
 
     <Button
         android:id="@+id/btn_setting_activity_home"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/buttonColorTheme"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/comicneue_bold"
+        android:layout_marginHorizontal="32dp"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -57,9 +78,12 @@
 
     <Button
         android:id="@+id/btn_help_activity_home"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/buttonColorTheme"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/comicneue_bold"
+        android:layout_marginHorizontal="32dp"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -67,9 +91,12 @@
 
     <Button
         android:id="@+id/btn_history_activity_home"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/buttonColorTheme"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/comicneue_bold"
+        android:layout_marginHorizontal="32dp"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -77,9 +104,12 @@
 
     <Button
         android:id="@+id/btn_exit_activity_home"
-        android:layout_width="280dp"
-        android:textColor="?attr/textColorTheme"
-        android:backgroundTint="?attr/backgroundSecondaryColorTheme"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/comicneue_bold"
+        android:layout_marginHorizontal="32dp"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="#DC3535"
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
