@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".ui.shop.ShopActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvShop"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="?attr/backgroundSecondaryColorTheme"
+            android:fontFamily="@font/comicneue_bold"
+            android:gravity="center"
+            android:text="Shop"
+            android:textAlignment="gravity"
+            android:textColor="?attr/textColorTheme1"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:src="?attr/customBackgroundSrcBackButton"
+            app:layout_constraintStart_toStartOf="@id/tvShop"
+            app:layout_constraintTop_toTopOf="@id/tvShop"
+            app:layout_constraintBottom_toBottomOf="@id/tvShop"
+            android:contentDescription="@string/back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivShowAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/rock_day"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="?attr/textColorTheme1"
+        android:text="Point"
+        android:fontFamily="@font/comicneue_bold"
+        android:textSize="28sp"/>
+
+    <TextView
+        android:id="@+id/tvShowPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="?attr/textColorTheme1"
+        android:fontFamily="@font/comicneue_regular"
+        android:hint="100"
+        android:textSize="24sp"/>
+
+    <GridLayout
+        android:id="@+id/rvShop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginHorizontal="32dp"
+        android:padding="8dp"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:background="?attr/customBackgroundRecyclerViewSrc">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:text="Pirates"
+                android:textSize="32sp"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"/>
+
+            <ImageView
+                android:id="@+id/ivAvatarSkinPirates"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/avatar_pirates"
+                android:contentDescription="1" />
+
+
+            <TextView
+                android:id="@+id/tvPrice1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"
+                android:background="@color/dark_grey"
+                android:text="xxx"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinPirates"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinPirates"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinPirates"/>
+
+
+            <TextView
+                android:id="@+id/tvStatusText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shop_sold"
+                android:text=" SOLD "
+                android:fontFamily="@font/comicneue_bold"
+                android:rotation="30"
+                android:textSize="40sp"
+                android:textColor="?attr/textColorTheme1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinPirates"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinPirates"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinPirates"
+                app:layout_constraintTop_toTopOf="@id/ivAvatarSkinPirates"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivAvatarSkinSpartan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/avatar_spartan"
+                android:contentDescription="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:text="Spartan"
+                android:textSize="32sp"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"/>
+
+
+            <TextView
+                android:id="@+id/tvPrice2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"
+                android:background="@color/dark_grey"
+                android:text="xxx"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinSpartan"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinSpartan"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinSpartan"/>
+
+
+            <TextView
+                android:id="@+id/tvStatusText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shop_sold"
+                android:text=" SOLD "
+                android:fontFamily="@font/comicneue_bold"
+                android:rotation="30"
+                android:textSize="40sp"
+                android:textColor="?attr/textColorTheme1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinSpartan"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinSpartan"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinSpartan"
+                app:layout_constraintTop_toTopOf="@id/ivAvatarSkinSpartan"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivAvatarSkinAlien"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/avatar_alien"
+                android:contentDescription="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:text="Alien"
+                android:textSize="32sp"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"/>
+
+
+            <TextView
+                android:id="@+id/tvPrice3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"
+                android:background="@color/dark_grey"
+                android:text="xxx"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinAlien"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinAlien"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinAlien"/>
+
+
+            <TextView
+                android:id="@+id/tvStatusText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shop_sold"
+                android:text=" SOLD "
+                android:fontFamily="@font/comicneue_bold"
+                android:rotation="30"
+                android:textSize="40sp"
+                android:textColor="?attr/textColorTheme1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkinAlien"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkinAlien"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkinAlien"
+                app:layout_constraintTop_toTopOf="@id/ivAvatarSkinAlien"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/ivAvatarSkin4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="4" />
+
+
+            <TextView
+                android:id="@+id/tvPrice4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/comicneue_bold"
+                android:textColor="?attr/textColorTheme2"
+                android:background="@color/dark_grey"
+                android:text="xxx"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkin4"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkin4"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkin4"/>
+
+            <TextView
+                android:id="@+id/tvStatusText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shop_sold"
+                android:text=" COMING SOON "
+                android:fontFamily="@font/comicneue_bold"
+                android:rotation="30"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textColor="?attr/textColorTheme1"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/ivAvatarSkin4"
+                app:layout_constraintEnd_toEndOf="@id/ivAvatarSkin4"
+                app:layout_constraintStart_toStartOf="@id/ivAvatarSkin4"
+                app:layout_constraintTop_toTopOf="@id/ivAvatarSkin4"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </GridLayout>
+
+
+</LinearLayout>

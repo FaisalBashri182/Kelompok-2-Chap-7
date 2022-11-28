@@ -21,4 +21,5 @@
     <attr name="customSrcPlayerPlayer" format="reference"/>
     <attr name="customSrcPlayerCPU" format="reference"/>
 
+
 </resources>
