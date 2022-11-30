@@ -16,6 +16,7 @@ import tsm.bdg.ch6group.ui.history.HistoryActivity
 import tsm.bdg.ch6group.ui.menu.HalamanMenuActivity
 import tsm.bdg.ch6group.ui.profile.ProfileActivity
 import tsm.bdg.ch6group.ui.setting.SettingActivity
+import tsm.bdg.ch6group.ui.shop.ShopActivity
 
 class HomeActivity : AppCompatActivity(), HomeView {
 
@@ -99,6 +100,12 @@ class HomeActivity : AppCompatActivity(), HomeView {
 
         binding.btnHistoryActivityHome.setOnClickListener {
             val intent = Intent(this, HistoryActivity::class.java)
+            intent.putExtra("name", player)
+            startActivity(intent)
+        }
+
+        binding.btnShopActivity.setOnClickListener {
+            val intent = Intent(this, ShopActivity::class.java)
             intent.putExtra("name", player)
             startActivity(intent)
         }

@@ -7,6 +7,8 @@
     android:backgroundTint="?attr/backgroundPrimaryColorTheme"
     tools:context=".ui.home.HomeActivity">
 
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -50,6 +52,8 @@
         android:layout_gravity="center_horizontal"
         android:text="Profile" />
 
+
+
     <Button
         android:id="@+id/btn_play_game_activity_home"
         android:layout_width="match_parent"
@@ -62,6 +66,19 @@
         android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal"
         android:text="Play Game" />
+
+    <Button
+        android:id="@+id/btn_shop_activity"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/comicneue_bold"
+        android:layout_marginHorizontal="32dp"
+        android:textSize="16sp"
+        android:textColor="?attr/textColorTheme1"
+        android:backgroundTint="?attr/buttonColorTheme1"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Shop" />
 
     <Button
         android:id="@+id/btn_setting_activity_home"
@@ -101,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="History" />
+
 
     <Button
         android:id="@+id/btn_exit_activity_home"
