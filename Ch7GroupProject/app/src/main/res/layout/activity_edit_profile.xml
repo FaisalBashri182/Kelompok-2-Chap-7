@@ -4,6 +4,244 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.editprofile.EditProfileActivity">
+    android:background="?attr/backgroundPrimaryColorTheme"
+    android:orientation="vertical"
+    tools:context=".ui.auth.signup.SignUpActivity">
+
+    <TextView
+        android:id="@+id/tvEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/backgroundSecondaryColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        android:gravity="center"
+        android:text="Edit Profile"
+        android:textAlignment="gravity"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="@string/back"
+        android:src="?attr/customBackgroundSrcBackButton"
+        app:layout_constraintBottom_toBottomOf="@id/tvEditProfile"
+        app:layout_constraintStart_toStartOf="@id/tvEditProfile"
+        app:layout_constraintTop_toTopOf="@id/tvEditProfile" />
+
+    <TextView
+        android:id="@+id/tv_title_activity_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Choose avatar"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEditProfile" />
+
+<!--    <HorizontalScrollView-->
+<!--        android:id="@+id/svAvatar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_title_activity_sign_up">-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/ll_Avatar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="32dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar1_activity_sign_up"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="visible"-->
+<!--                android:src="@drawable/avatar1_svgrepo_com" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar2_activity_sign_up"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="visible"-->
+<!--                android:src="@drawable/avatar2_svgrepo_com" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar3_activity_sign_up"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="visible"-->
+<!--                android:src="@drawable/avatar3_svgrepo_com" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar4_activity_sign_up"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="visible"-->
+<!--                android:src="@drawable/avatar4_svgrepo_com" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar_pirates"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="gone"-->
+<!--                android:src="@drawable/avatar_pirates" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar_spartan"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="gone"-->
+<!--                android:src="@drawable/avatar_spartan" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/iv_avatar_alien"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:visibility="gone"-->
+<!--                android:src="@drawable/avatar_alien" />-->
+
+<!--        </LinearLayout>-->
+<!--    </HorizontalScrollView>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAvatar"
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:layout_marginHorizontal="32dp"
+        android:foregroundGravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_activity_sign_up"/>
+
+    <TextView
+        android:id="@+id/tv_user_name_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Username"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvAvatar" />
+
+    <EditText
+        android:id="@+id/et_user_name_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="32dp"
+        android:autofillHints=""
+        android:background="?attr/customBackgroundColorEditText"
+        android:inputType="text"
+        android:paddingHorizontal="8dp"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_activity_sign_up" />
+
+    <TextView
+        android:id="@+id/tv_email_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Email"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_user_name_activity_sign_up" />
+
+    <EditText
+        android:id="@+id/et_email_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="32dp"
+        android:autofillHints=""
+        android:background="?attr/customBackgroundColorEditText"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="8dp"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_activity_sign_up"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/tv_password_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Password"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email_activity_sign_up" />
+
+    <EditText
+        android:id="@+id/et_enter_password_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="32dp"
+        android:autofillHints=""
+        android:background="?attr/customBackgroundColorEditText"
+        android:inputType="textPassword"
+        android:paddingHorizontal="8dp"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_password_activity_sign_up"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/tv_re_enter_password_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Re enter password"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_enter_password_activity_sign_up" />
+
+    <EditText
+        android:id="@+id/et_re_enter_password_activity_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginHorizontal="32dp"
+        android:autofillHints=""
+        android:background="?attr/customBackgroundColorEditText"
+        android:inputType="textPassword"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_re_enter_password_activity_sign_up"
+        tools:ignore="LabelFor" />
+
+
+    <Button
+        android:id="@+id/btn_sign_up_activity_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="?attr/buttonColorTheme1"
+        android:text="Update"
+        android:textColor="?attr/textColorTheme1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_re_enter_password_activity_sign_up" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
