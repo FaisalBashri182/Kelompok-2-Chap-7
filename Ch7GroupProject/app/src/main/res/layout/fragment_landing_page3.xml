@@ -10,12 +10,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="397dp"
-        android:layout_height="197dp"
-        android:layout_marginTop="244dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="128dp"
         android:contentDescription="@string/gambar_landing_page_2"
-        android:paddingHorizontal="20dp"
-        android:src="@drawable/aset_01"
+        android:src="@drawable/suit_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
