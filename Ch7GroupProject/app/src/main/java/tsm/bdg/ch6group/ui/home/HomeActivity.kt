@@ -4,28 +4,39 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
+import coil.load
 import tsm.bdg.ch6group.R
+import tsm.bdg.ch6group.ResultState
 import tsm.bdg.ch6group.databinding.ActivityHomeBinding
 import tsm.bdg.ch6group.ui.help.HelpActivity
-import tsm.bdg.ch6group.data.local.Db
+import tsm.bdg.ch6group.data.local.model.GetUserResponse
 import tsm.bdg.ch6group.ui.history.HistoryActivity
+import tsm.bdg.ch6group.ui.leaderboard.LeaderBoardActivity
+import tsm.bdg.ch6group.ui.loginhistory.LoginHistoryActivity
 import tsm.bdg.ch6group.ui.menu.HalamanMenuActivity
 import tsm.bdg.ch6group.ui.profile.ProfileActivity
-import tsm.bdg.ch6group.ui.setting.SettingActivity
+import tsm.bdg.ch6group.ui.setting.AbcActivity
+import tsm.bdg.ch6group.ui.shop.ShopActivity
 
-class HomeActivity : AppCompatActivity(), HomeView {
+
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
 
-    private var dataImage : String = "1"
+    private lateinit var viewModel: HomeViewModel
 
-    @OptIn(DelicateCoroutinesApi::class)
-    @SuppressLint("CommitPrefEdits", "SuspiciousIndentation")
+    private var foto = ""
+
+
+    @SuppressLint("CommitPrefEdits")
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val player = intent.getStringExtra("username")
+        val email = intent.getStringExtra("email")
+        val token = intent.getStringExtra("token")
 
         val sharedPreference = getSharedPreferences("Setting", MODE_PRIVATE)
         val sharedEdit = sharedPreference.edit()
@@ -35,36 +46,45 @@ class HomeActivity : AppCompatActivity(), HomeView {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
-        val player = intent.getStringExtra("name")
-
+        binding.ivAvatarActivitySignUp.load(R.drawable.landing_page3)
         binding.tvNameActivitySignUp.text = player
 
-        val db = Db.getInstance(this)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-        val presenter = HomePresenter(this,this)
+        if (token != null) {
+            viewModel.getUser(token)
+        }
 
-        presenter.menu()
+        viewModel.afterLogin.observe(this) { state ->
+            when (state) {
+                is ResultState.Loading -> {
+                    binding.progressBar.isVisible = state.loading
+                }
+                is ResultState.Success<*> -> {
 
-        GlobalScope.launch(Dispatchers.IO) {
-            val avatar = db?.userDao()?.getName(player.toString())
-            launch(Dispatchers.Main) {
+                    val response = state.data as GetUserResponse
 
-                dataImage = avatar?.avatar.toString()
+                    foto = response.data.photo
 
-                when (dataImage) {
-                    "1" -> {
-                        binding.ivAvatarActivitySignUp.setImageResource(R.drawable.avatar1_svgrepo_com)
+                    if (response.success) {
+
+                        binding.ivAvatarActivitySignUp.load(foto)
+                        binding.tvNameActivitySignUp.text = player
+
+
+
+                    } else {
+                        Toast.makeText(this@HomeActivity, "gagal login}", Toast.LENGTH_SHORT)
+                            .show()
+                        binding.ivAvatarActivitySignUp.load(R.drawable.landing_page3)
+
                     }
-                    "2" -> {
-                        binding.ivAvatarActivitySignUp.setImageResource(R.drawable.avatar2_svgrepo_com)
-                    }
-                    "3" -> {
-                        binding.ivAvatarActivitySignUp.setImageResource(R.drawable.avatar3_svgrepo_com)
-                    }
-                    "4" -> {
-                        binding.ivAvatarActivitySignUp.setImageResource(R.drawable.avatar4_svgrepo_com)
-                    }
+                }
+                is ResultState.Error -> {
+                    Toast.makeText(
+                        this@HomeActivity, state.e.message.toString(), Toast.LENGTH_SHORT
+                    ).show()
+                    binding.ivAvatarActivitySignUp.load(R.drawable.landing_page3)
                 }
             }
         }
@@ -81,14 +101,17 @@ class HomeActivity : AppCompatActivity(), HomeView {
         }
 
         binding.btnSettingActivityHome.setOnClickListener {
-            val intent = Intent(this, SettingActivity::class.java)
+            val intent = Intent(this, AbcActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnProfileActivitySignUp.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
-            intent.putExtra("name", player)
-            intent.putExtra("imageAvatar", dataImage)
+            intent.putExtra("username", player)
+            intent.putExtra("email", email)
+            intent.putExtra("token", token)
+            intent.putExtra("foto", foto)
+
             startActivity(intent)
         }
 
@@ -102,7 +125,23 @@ class HomeActivity : AppCompatActivity(), HomeView {
             intent.putExtra("name", player)
             startActivity(intent)
         }
+
+        binding.btnShopActivity.setOnClickListener {
+            val intent = Intent(this, ShopActivity::class.java)
+            intent.putExtra("name", player)
+            startActivity(intent)
+        }
+
+        binding.btnLoginHistory.setOnClickListener {
+            val intent = Intent(this, LoginHistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnLeaderBoard.setOnClickListener {
+            val intent = Intent(this, LeaderBoardActivity::class.java)
+            startActivity(intent)
+        }
+
     }
-    @SuppressLint("CommitPrefEdits")
-    override fun onMenu() {}
+
 }

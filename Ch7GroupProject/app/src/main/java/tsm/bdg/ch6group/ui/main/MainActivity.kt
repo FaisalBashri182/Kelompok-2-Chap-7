@@ -3,6 +3,7 @@ package tsm.bdg.ch6group.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.annotation.SuppressLint
+import android.media.SoundPool
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageView
@@ -16,14 +17,28 @@ import tsm.bdg.ch6group.Database1
 import tsm.bdg.ch6group.R
 import tsm.bdg.ch6group.databinding.ActivityMainBinding
 import tsm.bdg.ch6group.databinding.CustomDialogBinding
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
+import tsm.bdg.ch6group.ui.setting.Constant
+import tsm.bdg.ch6group.ui.setting.PreferencesHelper
 import java.util.*
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), SoundPool.OnLoadCompleteListener, MainView {
 
     private lateinit var view: CustomDialogBinding
 
     private lateinit var binding: ActivityMainBinding
+
+    var mSoundPool: SoundPool? = null
+
+    lateinit var sharedSound: PreferencesHelper
+
+    var soundOn = 0
+    var soundPlayerWin = 0
+    var soundComWin = 0
+    var soundDraw = 0
+    var soundRestart = 0
+    var numSoundsLoaded = 0
+
 
 
     @SuppressLint("ResourceAsColor", "SetTextI18n")
@@ -31,6 +46,8 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedSound = PreferencesHelper(this)
 
         val playerName = intent.getStringExtra("nama")
 
@@ -132,6 +149,62 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        numSoundsLoaded = 0
+
+
+        if (sharedSound.getBoolean(Constant.PREF_IS_SOUND)) {
+
+            soundOn = 1
+
+            initializeSoundPool()
+
+            Toast.makeText(
+                this@MainActivity,
+                "soundOn = 1",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        destroySoundPool()
+
+    }
+
+    private fun destroySoundPool() {
+        if (mSoundPool != null) {
+            mSoundPool!!.release()
+            mSoundPool = null
+        }
+    }
+
+    override fun onLoadComplete(soundPool: SoundPool?, sampleId: Int, status: Int) {
+        // let us know that a sound has been loaded by the SoundPool
+        numSoundsLoaded++
+        Toast.makeText(this, "Sound $numSoundsLoaded Loaded", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun initializeSoundPool() {
+        // create a SoundPool with API 21 and up:
+        val spb = SoundPool.Builder()
+        spb.setMaxStreams(4)
+        mSoundPool = spb.build()
+
+        // use onLoadComplete Listener implemented by Activity
+        mSoundPool!!.setOnLoadCompleteListener(this)
+
+        // load sound files into SoundPool using res -> raw id
+        // parameters: (context, file_id, priority)
+        soundPlayerWin = mSoundPool!!.load(this, R.raw.sound_player_win, 1)
+        soundComWin = mSoundPool!!.load(this, R.raw.sound_com_win, 1)
+        soundDraw = mSoundPool!!.load(this, R.raw.sound_draw, 1)
+        soundRestart = mSoundPool!!.load(this, R.raw.sound_select, 1)
+    }
+
     private fun buttonStatusFalse() {
         binding.ivGuntingP.isEnabled = false
         binding.ivBatuP.isEnabled = false
@@ -166,12 +239,16 @@ class MainActivity : AppCompatActivity(), MainView {
         when (result) {
             "MENANG" -> {
                 dataWin = 1
+                if (soundOn == 1) mSoundPool!!.play(soundPlayerWin, 1f, 1f, 1, 1, 1f)
             }
             "KALAH" -> {
                 dataLose = 1
+                if (soundOn == 1) mSoundPool!!.play(soundComWin, 1f, 1f, 1, 1, 1f)
             }
             "SERI" -> {
                 dataDraw = 1
+                if (soundOn == 1) mSoundPool!!.play(soundDraw, 1f, 1f, 1, 1, 1f)
+
             }
         }
 

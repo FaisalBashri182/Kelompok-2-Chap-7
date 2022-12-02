@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ch6Group</string>
+    <string name="app_name">GAME SUIT GUNTING BATU KERTAS</string>
 
     <string name="kertas">Kertas</string>
     <string name="gunting">Gunting</string>
@@ -57,4 +57,10 @@
     <string name="kembali_ke_menu">Kembali ke menu</string>
     <string name="about_content">Permainan suit merupakan permainan yang berasal dari tiongkok yang pilihannya adalah katak, siput dan ular, lalu mengalami perubahan dari waktu ke waktu hingga pilihannya menjadi gunting, kertas, batu.</string>
     <string name="avatar">avatar</string>
+
+    <string name="sound_on">Game Sound ON</string>
+    <string name="sound_off">Game Sound OFF</string>
+    <string name="switch_music">SOUND</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

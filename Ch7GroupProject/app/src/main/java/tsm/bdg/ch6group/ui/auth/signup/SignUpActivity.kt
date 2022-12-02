@@ -1,22 +1,31 @@
 package tsm.bdg.ch6group.ui.auth.signup
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import tsm.bdg.ch6group.R
-import tsm.bdg.ch6group.data.model.User
+import tsm.bdg.ch6group.ResultState
+import tsm.bdg.ch6group.data.local.model.RegisterResponse
+import tsm.bdg.ch6group.data.local.model.User
 import tsm.bdg.ch6group.databinding.ActivitySignUpBinding
 import tsm.bdg.ch6group.databinding.CustomRegisterDialogBinding
+import tsm.bdg.ch6group.ui.auth.login.LoginActivity
 
-class SignUpActivity : AppCompatActivity(), SignUpView {
 
-    private lateinit var view: CustomRegisterDialogBinding
+class SignUpActivity : AppCompatActivity() {
+
+//    private lateinit var view: CustomRegisterDialogBinding
 
     private lateinit var binding: ActivitySignUpBinding
+
+    private lateinit var viewModel: SignUpViewModel
 
     private var dataAvatar: String = "1"
 
@@ -27,54 +36,57 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val presenter = SignUpPresenter(this, this, binding)
+        viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
-        val srcImage1: ImageButton = binding.ivAvatar1ActivitySignUp
-        val srcImage2: ImageButton = binding.ivAvatar2ActivitySignUp
-        val srcImage3: ImageButton = binding.ivAvatar3ActivitySignUp
-        val srcImage4: ImageButton = binding.ivAvatar4ActivitySignUp
-
-        srcImage1.setOnClickListener {
-            srcImage1.setBackgroundResource(R.drawable.bg_rounded) //selected
-            srcImage2.setBackgroundResource(R.drawable.bg_default) //unselected
-            srcImage3.setBackgroundResource(R.drawable.bg_default)
-            srcImage4.setBackgroundResource(R.drawable.bg_default)
-            dataAvatar = "1"
-        }
-        srcImage2.setOnClickListener {
-            srcImage2.setBackgroundResource(R.drawable.bg_rounded)//selected
-            srcImage1.setBackgroundResource(R.drawable.bg_default)//unselected
-            srcImage3.setBackgroundResource(R.drawable.bg_default)
-            srcImage4.setBackgroundResource(R.drawable.bg_default)
-            dataAvatar = "2"
-        }
-        srcImage3.setOnClickListener {
-            srcImage3.setBackgroundResource(R.drawable.bg_rounded)//selected
-            srcImage2.setBackgroundResource(R.drawable.bg_default)//unselected
-            srcImage1.setBackgroundResource(R.drawable.bg_default)
-            srcImage4.setBackgroundResource(R.drawable.bg_default)
-            dataAvatar = "3"
-        }
-        srcImage4.setOnClickListener {
-            srcImage4.setBackgroundResource(R.drawable.bg_rounded)//selected
-            srcImage2.setBackgroundResource(R.drawable.bg_default)//unselected
-            srcImage3.setBackgroundResource(R.drawable.bg_default)
-            srcImage1.setBackgroundResource(R.drawable.bg_default)
-            dataAvatar = "4"
-        }
 
         binding.btnSignUpActivitySignUp.setOnClickListener {
-            val dataName = binding.etUserNameActivitySignUp.text.trim().toString()
-            val dataEmail = binding.etEmailActivitySignUp.text.trim().toString()
-            val dataPassword = binding.etEnterPasswordActivitySignUp.text.trim().toString()
 
-            val dataUser = User(
-                name = dataName,
-                email = dataEmail,
-                password = dataPassword,
-                avatar = dataAvatar
-            )
-            presenter.signUp(dataUser)
+            val email = binding.etEmailActivitySignUp.text.toString()
+            val username = binding.etUserNameActivitySignUp.text.toString()
+            val password = binding.etEnterPasswordActivitySignUp.text.toString()
+
+            when {
+                email.isEmpty() -> {
+                    binding.etEmailActivitySignUp.error = "Email tidak boleh kosong"
+                    binding.etEmailActivitySignUp.requestFocus()
+                }
+                username.isEmpty() -> {
+                    binding.etUserNameActivitySignUp.error = "Username tidak boleh kosong"
+                    binding.etUserNameActivitySignUp.requestFocus()
+                }
+                password.isEmpty() -> {
+                    binding.etEnterPasswordActivitySignUp.error = "Password tidak boleh kosong"
+                    binding.etEnterPasswordActivitySignUp.requestFocus()
+                }
+                else -> {
+                    viewModel.register(email, username, password)
+                }
+            }
+        }
+
+        viewModel.resultRegister.observe(this) { state ->
+            when (state) {
+                is ResultState.Loading -> {
+                    binding.progressBar.isVisible = state.loading
+                }
+                is ResultState.Success<*> -> {
+                    val response = state.data as RegisterResponse
+                    if (response.success) {
+                        Intent(this, LoginActivity::class.java).apply {
+                            startActivity(this)
+                        }
+                        finish()
+                    } else {
+                        Toast.makeText(this@SignUpActivity, "gagal login}", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+                is ResultState.Error -> {
+                    Toast.makeText(
+                        this@SignUpActivity, state.e.message.toString(), Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
 
         binding.ivBack.setOnClickListener {
@@ -82,40 +94,4 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         }
     }
 
-    private fun clearText() {
-        binding.etUserNameActivitySignUp.text.clear()
-        binding.etEmailActivitySignUp.text.clear()
-        binding.etEnterPasswordActivitySignUp.text.clear()
-        binding.etReEnterPasswordActivitySignUp.text.clear()
-    }
-
-    override fun onSuccess() {
-        view = CustomRegisterDialogBinding.inflate(LayoutInflater.from(this), null, false)
-        val dialogBuilder = AlertDialog.Builder(this)
-        dialogBuilder.setView(view.root)
-        val dialog = dialogBuilder.create()
-        dialog.show()
-
-        view.btnNext.setOnClickListener {
-            finish()
-            dialog.dismiss()
-        }
-    }
-
-    override fun onErrorNotFilled() {
-        Toast.makeText(
-            this@SignUpActivity,
-            "Please fill all the requirement",
-            Toast.LENGTH_SHORT
-        ).show()
-        this.clearText()
-    }
-
-    override fun onErrorPassNotMatch() {
-        Toast.makeText(
-            this@SignUpActivity,
-            "Make sure both password are the same !",
-            Toast.LENGTH_SHORT
-        ).show()
-    }
 }

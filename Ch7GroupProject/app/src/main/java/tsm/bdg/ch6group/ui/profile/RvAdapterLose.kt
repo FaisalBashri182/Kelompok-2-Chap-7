@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import tsm.bdg.ch6group.databinding.ItemRvWinActivityProfileBinding
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
 
 class RvAdapterLose(private val listLose: MutableList<Game>) :
     RecyclerView.Adapter<RvAdapterLose.LoseViewHolder>() {

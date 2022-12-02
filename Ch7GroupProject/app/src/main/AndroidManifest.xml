@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -15,50 +17,163 @@
         android:theme="@style/Theme.Ch6Group"
         tools:targetApi="31">
 
+
         <activity
+            android:name=".editprofile2.EditProfile2Activity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Ch6Group.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.leaderboard.LeaderBoardActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.loginhistory.LoginHistoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.setting.AbcActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.help.VideoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.editprofile.EditProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.help.HelpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.history.HistoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.profile.ProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
-            android:name=".ui.setting.SettingActivity"
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.setting.Setting2Activity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.home.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.auth.signup.SignUpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.auth.login.LoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.intro.LandingPage3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.menu.HalamanMenuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.intro.FragmentSpaceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.main.MainActivity2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.intro.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,49 +184,28 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
-            android:name=".ui.intro.LandingPage3"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.menu.HalamanMenuActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.intro.FragmentSpaceActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.main.MainActivity2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ui.intro.SplashScreen"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
             android:name=".ui.main.MainActivity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:theme="@style/Theme.Ch6Group.NoActionBar"
+            android:name=".ui.shop.ShopActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
+
+
     </application>
 
 </manifest>

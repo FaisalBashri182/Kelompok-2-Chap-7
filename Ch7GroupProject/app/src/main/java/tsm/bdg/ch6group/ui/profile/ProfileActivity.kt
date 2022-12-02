@@ -1,14 +1,20 @@
 package tsm.bdg.ch6group.ui.profile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.load
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import tsm.bdg.ch6group.Database1
 import tsm.bdg.ch6group.R
 import tsm.bdg.ch6group.databinding.ActivityProfileBinding
+import tsm.bdg.ch6group.editprofile2.EditProfile2Activity
+import tsm.bdg.ch6group.ui.editprofile.EditProfileActivity
+import tsm.bdg.ch6group.ui.setting.AbcActivity
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -21,7 +27,11 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val player = intent.getStringExtra("name")
+        val player = intent.getStringExtra("username")
+        val email = intent.getStringExtra("email")
+        val token = intent.getStringExtra("token")
+        val foto = intent.getStringExtra("foto")
+
 
         pathImage = intent.getStringExtra("imageAvatar").toString()
 
@@ -45,7 +55,11 @@ class ProfileActivity : AppCompatActivity() {
 
             }
 
+
+
         }
+
+        binding.ivAvatar.load(foto)
 
         val db = Database1.getInstance(this)
 
@@ -102,5 +116,51 @@ class ProfileActivity : AppCompatActivity() {
         binding.ivBack.setOnClickListener {
             finish()
         }
+        binding.btnEditProfile.setOnClickListener {
+
+            val intent = Intent(this, EditProfile2Activity::class.java)
+            intent.putExtra("username", player)
+            intent.putExtra("email", email)
+            intent.putExtra("token", token)
+
+            startActivity(intent)
+
+        }
+        binding.btnWa.setOnClickListener {
+
+            val message = "$player " +
+                    " level :  ${binding.tvLevel.text} " +
+                    " , jumlah menang : ${binding.tvNumberWin.text}" +
+                    " , jumlah kalah : ${binding.tvNumberLose.text}"
+            // Calling the function
+            sendMessage(message)
+
+        }
+
+    }
+
+    private fun sendMessage(message :String) {
+        // Creating intent with action send
+        val intent = Intent(Intent.ACTION_SEND)
+
+        // Setting Intent type
+        intent.type = "text/plain"
+
+        // Setting whatsapp package name
+        intent.setPackage("com.whatsapp")
+
+        // Give your message here
+        intent.putExtra(Intent.EXTRA_TEXT, message)
+
+        // Checking whether whatsapp is installed or not
+        if (intent.resolveActivity(packageManager) == null) {
+            Toast.makeText(this,
+                "Please install whatsapp first.",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Starting Whatsapp
+        startActivity(intent)
     }
 }

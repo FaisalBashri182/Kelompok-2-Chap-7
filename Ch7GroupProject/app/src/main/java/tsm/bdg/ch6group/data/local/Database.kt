@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import tsm.bdg.ch6group.data.local.GameDao
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
 
 
 @Database(

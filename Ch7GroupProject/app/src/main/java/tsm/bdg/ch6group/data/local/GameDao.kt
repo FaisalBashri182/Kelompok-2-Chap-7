@@ -2,7 +2,7 @@ package tsm.bdg.ch6group.data.local
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
 
 
 @Dao
@@ -31,6 +31,10 @@ interface GameDao {
 
     @Query("SELECT * FROM game GROUP BY date")
     fun getHistory(): MutableList<Game>
+
+//    @Query("SELECT name, COUNT (*) win FROM game WHERE win=1 GROUP BY name")
+    @Query("SELECT * FROM game WHERE win=1 GROUP BY name")
+    fun getTotalWin(): MutableList<Game>
 
 
 

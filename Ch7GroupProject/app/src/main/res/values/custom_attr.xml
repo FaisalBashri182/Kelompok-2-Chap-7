@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <attr name="textColorTheme" format="color"/>
     <attr name="textColorTheme1" format="color"/>
     <attr name="textColorTheme2" format="color"/>
     <attr name="hintColorTheme" format="color"/>
@@ -20,5 +21,10 @@
     <attr name="customSrcKertas" format="reference"/>
     <attr name="customSrcPlayerPlayer" format="reference"/>
     <attr name="customSrcPlayerCPU" format="reference"/>
+    <attr name="customSrcAddImage" format="reference"/>
+    <attr name="playButton" format="reference"/>
+    <attr name="pauseButton" format="reference"/>
+    <attr name="stopButton" format="reference"/>
+
 
 </resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.Setting2Activity">
+
+    <Switch
+        android:id="@+id/swc_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:thumbTint="?attr/textColorTheme1"
+        android:trackTint="?attr/backgroundTeriaryColorTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_theme"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tv_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/comicneue_regular"
+        android:text="@string/normal"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/swc_theme"
+        app:layout_constraintEnd_toStartOf="@+id/swc_theme"
+        app:layout_constraintTop_toTopOf="@+id/swc_theme" />
+
+    <TextView
+        android:id="@+id/tv_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/comicneue_regular"
+        android:text="@string/dark"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/swc_theme"
+        app:layout_constraintStart_toEndOf="@+id/swc_theme"
+        app:layout_constraintTop_toTopOf="@+id/swc_theme" />
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/backgroundSecondaryColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        android:gravity="center"
+        android:text="@string/setting"
+        android:textAlignment="gravity"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/tv_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/comicneue_bold"
+        android:text="@string/theme"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/swc_theme"
+        app:layout_constraintStart_toStartOf="@+id/swc_theme"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/back"
+        android:src="?attr/customBackgroundSrcBackButton"
+        app:layout_constraintBottom_toBottomOf="@id/tv_setting"
+        app:layout_constraintStart_toStartOf="@id/tv_setting"
+        app:layout_constraintTop_toTopOf="@id/tv_setting" />
+
+    <Switch
+        android:id="@+id/swc_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:thumbTint="?attr/textColorTheme"
+        android:trackTint="?attr/backgroundTeriaryColorTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swc_theme"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tv_sound_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOUND OFF"
+        app:layout_constraintBottom_toBottomOf="@+id/swc_sound"
+        app:layout_constraintEnd_toStartOf="@+id/swc_sound"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sound_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SOUND ON"
+        app:layout_constraintBottom_toBottomOf="@+id/swc_sound"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swc_sound" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

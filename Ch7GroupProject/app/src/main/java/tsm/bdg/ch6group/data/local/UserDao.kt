@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import androidx.room.Update
-import tsm.bdg.ch6group.data.model.User
+import tsm.bdg.ch6group.data.local.model.User
 
 @Dao
 interface UserDao {

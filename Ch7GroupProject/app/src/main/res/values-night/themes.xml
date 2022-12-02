@@ -30,6 +30,10 @@
         <item name="customSrcPlayerPlayer">@drawable/player_player_night</item>
         <item name="customSrcPlayerCPU">@drawable/player_cpu_night</item>
         <item name="textColorTheme2">#9C27B0</item>
+        <item name="customSrcAddImage">@drawable/dark_add_image</item>
+        <item name="playButton">@drawable/dark_play</item>
+        <item name="pauseButton">@drawable/dark_pause</item>
+        <item name="stopButton">@drawable/dark_stop</item>
 
     </style>
 </resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvEditProfile2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/backgroundSecondaryColorTheme"
+        android:fontFamily="@font/comicneue_bold"
+        android:gravity="center"
+        android:text="Edit Profile"
+        android:textAlignment="gravity"
+        android:textColor="?attr/textColorTheme1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:src="?attr/customBackgroundSrcBackButton"
+        app:layout_constraintStart_toStartOf="@id/tvEditProfile2"
+        app:layout_constraintTop_toTopOf="@id/tvEditProfile2"
+        app:layout_constraintBottom_toBottomOf="@id/tvEditProfile2"
+        android:contentDescription="@string/back" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile2"
+        tools:context=".ui.profile.ProfileActivity">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="?attr/customSrcAddImage" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:background="?attr/customBackgroundColorEditText"
+            android:hint="Email"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingHorizontal="8dp"
+            android:textColor="?attr/textColorTheme1"
+            tools:ignore="TextFields" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:background="?attr/customBackgroundColorEditText"
+            android:hint="Username"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingHorizontal="8dp"
+            android:textColor="?attr/textColorTheme1"
+            tools:ignore="TextFields" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:fontFamily="@font/comicneue_bold"
+            android:text="Save"
+            android:textColor="?attr/textColorTheme1" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

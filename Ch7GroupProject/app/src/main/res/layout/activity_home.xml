@@ -1,118 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:backgroundTint="?attr/backgroundPrimaryColorTheme"
     tools:context=".ui.home.HomeActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="?attr/backgroundSecondaryColorTheme"
-        android:fontFamily="@font/comicneue_bold"
-        android:gravity="center"
-        android:text="Home"
-        android:textAlignment="gravity"
-        android:textColor="?attr/textColorTheme1"
-        android:textSize="30sp"
-        tools:ignore="HardcodedText" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:backgroundTint="?attr/backgroundPrimaryColorTheme">
 
-    <ImageView
-        android:id="@+id/iv_avatar_activity_sign_up"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="64dp"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="?attr/backgroundSecondaryColorTheme"
+            android:fontFamily="@font/comicneue_bold"
+            android:gravity="center"
+            android:text="Home"
+            android:textAlignment="gravity"
+            android:textColor="?attr/textColorTheme1"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/iv_avatar_activity_sign_up"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/landing_page3"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_name_activity_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="?attr/textColorTheme1"
+            android:layout_gravity="center_horizontal"
+            android:text="Username" />
+
+        <Button
+            android:id="@+id/btn_profile_activity_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:fontFamily="@font/comicneue_bold"
+            android:text="Profile" />
+
+        <Button
+            android:id="@+id/btn_play_game_activity_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:fontFamily="@font/comicneue_bold"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Play Game" />
+
+        <Button
+            android:id="@+id/btn_shop_activity"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Shop" />
+
+        <Button
+            android:id="@+id/btn_setting_activity_home"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Setting" />
+
+        <Button
+            android:id="@+id/btn_help_activity_home"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Help" />
+
+        <Button
+            android:id="@+id/btn_history_activity_home"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="History" />
+
+        <Button
+            android:id="@+id/btn_login_history"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Login History" />
+
+        <Button
+            android:id="@+id/btn_leader_board"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="?attr/buttonColorTheme1"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Leader Board" />
+
+
+        <Button
+            android:id="@+id/btn_exit_activity_home"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comicneue_bold"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="16sp"
+            android:textColor="?attr/textColorTheme1"
+            android:backgroundTint="#DC3535"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Exit" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/landing_page3"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tv_name_activity_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="?attr/textColorTheme1"
-        android:layout_gravity="center_horizontal"
-        android:text="Username" />
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_profile_activity_sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:fontFamily="@font/comicneue_bold"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="?attr/buttonColorTheme1"
-        android:layout_marginTop="24dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Profile" />
 
-    <Button
-        android:id="@+id/btn_play_game_activity_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:fontFamily="@font/comicneue_bold"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="?attr/buttonColorTheme1"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Play Game" />
-
-    <Button
-        android:id="@+id/btn_setting_activity_home"
-        android:layout_width="match_parent"
-        android:fontFamily="@font/comicneue_bold"
-        android:layout_marginHorizontal="32dp"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="?attr/buttonColorTheme1"
-        android:layout_marginTop="8dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Setting" />
-
-    <Button
-        android:id="@+id/btn_help_activity_home"
-        android:layout_width="match_parent"
-        android:fontFamily="@font/comicneue_bold"
-        android:layout_marginHorizontal="32dp"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="?attr/buttonColorTheme1"
-        android:layout_marginTop="8dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Help" />
-
-    <Button
-        android:id="@+id/btn_history_activity_home"
-        android:layout_width="match_parent"
-        android:fontFamily="@font/comicneue_bold"
-        android:layout_marginHorizontal="32dp"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="?attr/buttonColorTheme1"
-        android:layout_marginTop="8dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="History" />
-
-    <Button
-        android:id="@+id/btn_exit_activity_home"
-        android:layout_width="match_parent"
-        android:fontFamily="@font/comicneue_bold"
-        android:layout_marginHorizontal="32dp"
-        android:textSize="16sp"
-        android:textColor="?attr/textColorTheme1"
-        android:backgroundTint="#DC3535"
-        android:layout_marginTop="8dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Exit" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

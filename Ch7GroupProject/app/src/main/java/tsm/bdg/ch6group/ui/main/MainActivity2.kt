@@ -1,5 +1,6 @@
 package tsm.bdg.ch6group.ui.main
 
+import android.media.SoundPool
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,22 +13,37 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import tsm.bdg.ch6group.Database1
 import tsm.bdg.ch6group.R
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
 import tsm.bdg.ch6group.databinding.ActivityMain2Binding
 import tsm.bdg.ch6group.databinding.CustomDialogBinding
+import tsm.bdg.ch6group.ui.setting.Constant
+import tsm.bdg.ch6group.ui.setting.PreferencesHelper
 import java.util.*
 
-class MainActivity2 : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity(), SoundPool.OnLoadCompleteListener {
 
     private lateinit var view: CustomDialogBinding
 
     private lateinit var binding: ActivityMain2Binding
+
+    var mSoundPool: SoundPool? = null
+
+    lateinit var sharedSound: PreferencesHelper
+
+    var soundOn = 0
+    var soundPlayerWin = 0
+    var soundComWin = 0
+    var soundDraw = 0
+    var soundRestart = 0
+    var numSoundsLoaded = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sharedSound = PreferencesHelper(this)
 
         val playerName = intent.getStringExtra("nama")
 
@@ -189,12 +205,15 @@ class MainActivity2 : AppCompatActivity() {
         when (result) {
             "Pemain 1 MENANG!" -> {
                 dataWin = 1
+                if (soundOn == 1) mSoundPool!!.play(soundPlayerWin, 1f, 1f, 1, 1, 1f)
             }
             "Pemain 2 MENANG!" -> {
                 dataLose = 1
+                if (soundOn == 1) mSoundPool!!.play(soundDraw, 1f, 1f, 1, 1, 1f)
             }
             "Draw" -> {
                 dataDraw = 1
+                if (soundOn == 1) mSoundPool!!.play(soundDraw, 1f, 1f, 1, 1, 1f)
             }
 
         }
@@ -233,6 +252,62 @@ class MainActivity2 : AppCompatActivity() {
             }
         }
 
+    }
 
+    override fun onStart() {
+        super.onStart()
+
+        numSoundsLoaded = 0
+
+
+        if (sharedSound.getBoolean(Constant.PREF_IS_SOUND)) {
+
+            soundOn = 1
+
+            initializeSoundPool()
+
+            Toast.makeText(
+                this@MainActivity2,
+                "soundOn = 1",
+                Toast.LENGTH_SHORT
+            ).show()
+
+        }
+    }
+
+    private fun initializeSoundPool() {
+        // create a SoundPool with API 21 and up:
+        val spb = SoundPool.Builder()
+        spb.setMaxStreams(4)
+        mSoundPool = spb.build()
+
+        // use onLoadComplete Listener implemented by Activity
+        mSoundPool!!.setOnLoadCompleteListener(this)
+
+        // load sound files into SoundPool using res -> raw id
+        // parameters: (context, file_id, priority)
+        soundPlayerWin = mSoundPool!!.load(this, R.raw.sound_player_win, 1)
+        soundComWin = mSoundPool!!.load(this, R.raw.sound_com_win, 1)
+        soundDraw = mSoundPool!!.load(this, R.raw.sound_draw, 1)
+        soundRestart = mSoundPool!!.load(this, R.raw.sound_select, 1)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        destroySoundPool()
+
+    }
+
+    override fun onLoadComplete(soundPool: SoundPool?, sampleId: Int, status: Int) {
+        // let us know that a sound has been loaded by the SoundPool
+        numSoundsLoaded++
+        Toast.makeText(this, "Sound $numSoundsLoaded Loaded", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun destroySoundPool() {
+        if (mSoundPool != null) {
+            mSoundPool!!.release()
+            mSoundPool = null
+        }
     }
 }

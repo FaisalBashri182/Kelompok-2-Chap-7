@@ -11,7 +11,7 @@ import tsm.bdg.ch6group.databinding.ActivityLoginBinding
 class LoginPresenter(
     context: Context,
     private val view: LoginActivity,
-    private var binding: ActivityLoginBinding,
+    private var binding: ActivityLoginBinding
 ) {
 
     val db = Db.getInstance(context)

@@ -9,7 +9,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import tsm.bdg.ch6group.R
 import tsm.bdg.ch6group.data.local.Db
-import tsm.bdg.ch6group.data.model.User
+import tsm.bdg.ch6group.data.local.model.User
 import tsm.bdg.ch6group.databinding.ActivitySignUpBinding
 
 class SignUpPresenter(

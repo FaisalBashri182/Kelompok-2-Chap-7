@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import tsm.bdg.ch6group.databinding.ItemRvHistoryBinding
-import tsm.bdg.ch6group.data.model.Game
+import tsm.bdg.ch6group.data.local.model.Game
 
 class RvAdapter(private val listData: MutableList<Game>) :
     RecyclerView.Adapter<RvAdapter.HistoryViewHolder>() {

@@ -16,7 +16,6 @@ class HistoryPresenter(
     @OptIn(DelicateCoroutinesApi::class)
     fun show() {
         GlobalScope.launch(Dispatchers.IO) {
-//            val history = db?.gameDao()?.getAllDataGame()
             val history = db?.gameDao()?.getHistory()
 
             launch(Dispatchers.Main) {
